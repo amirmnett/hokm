@@ -27,13 +27,13 @@ class Card:
 #  -> Tarif yek deck kamel (54 kart)
 # ================================================
 
-class miz:
+class dast:
     def __init__(self):
         """با ساخت میز خودکار تمام کارت ها ساخته میشه"""
         self.list_kart = []       # list-e hame kart ha
-        self._create_deck()       # seda zadan sakhte kart ha
+        self._create_dast()       # seda zadan sakhte kart ha
 
-    def _create_miz(self):
+    def _create_dast(self):
         """ساخت میز(54کارت)"""
 
         # Khal-ha 
@@ -63,8 +63,8 @@ class miz:
     
         # ساخت 2 جوکر
         
-        self.list_kart.append(Card(None, "Joker-Red", 0))
-        self.list_kart.append(Card(None, "Joker-Black", 0))
+        self.list_kart.append(Card(None, "Joker-Red", None))
+        self.list_kart.append(Card(None, "Joker-Black", None))
 
     def bor(self):
         """بور زدن رندوم میز"""
@@ -90,9 +90,9 @@ class miz:
 #  Example Usage
 # ================================================
 
-deck = Deck()
+deck = dast()
 deck.bar_zadan()
 
-print("Tedad kart:", deck.tedad_kart())
-print("Kart bardashte shode:", deck.bardasht_kart())
-print("Baghimande:", deck.tedad_kart())
+print("Tedad kart:", dast.tedad_kart())
+print("Kart bardashte shode:", dast.bardasht_kart())
+print("Baghimande:", dast.tedad_kart())
