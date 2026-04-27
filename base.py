@@ -27,19 +27,19 @@ class Card:
 #  -> Tarif yek deck kamel (54 kart)
 # ================================================
 
-class Deck:
+class miz:
     def __init__(self):
-        """Dar sakhte deck be soorate khodkar tamame kart-ha sakhte mishavand."""
+        """با ساخت میز خودکار تمام کارت ها ساخته میشه"""
         self.list_kart = []       # list-e hame kart ha
         self._create_deck()       # seda zadan sakhte kart ha
 
-    def _create_deck(self):
-        """Sakhtane deck (52 kart asli + 2 Joker)"""
+    def _create_miz(self):
+        """ساخت میز(54کارت)"""
 
-        # Khal-ha (finglish)
+        # Khal-ha 
         list_khal = ["Hearts", "Diamonds", "Clubs", "Spades"]
 
-        # Raghame kart + emtiaz-ha
+        # اسم هر کارت و امتیاز مربوط به آن
         ragham_emtiaz = {
             "A": 14,
             "K": 13,
@@ -56,32 +56,29 @@ class Deck:
             "2": 2
         }
 
-        # -------------------------------------
-        # Sakhtane 52 kart
-        # -------------------------------------
-        for khal in list_khal:
+        # ساخت52 کارت
+            for khal in list_khal:
             for ragham, emtiaz in ragham_emtiaz.items():
                 self.list_kart.append(Card(khal, ragham, emtiaz))
-
-        # -------------------------------------
-        # Ezafe kardane 2 Joker
-        # -------------------------------------
+    
+        # ساخت 2 جوکر
+        
         self.list_kart.append(Card(None, "Joker-Red", 0))
         self.list_kart.append(Card(None, "Joker-Black", 0))
 
-    def bar_zadan(self):
-        """Bar zadan deck be soorate random"""
+    def bor(self):
+        """بور زدن رندوم میز"""
         import random
         random.shuffle(self.list_kart)
 
     def bardasht_kart(self):
-        """Bardashtane bala-tarin kart az deck (pop)"""
+        """برداشتن بالا ترین کارت از دست """
         if len(self.list_kart) == 0:
             return None
         return self.list_kart.pop()
 
     def tedad_kart(self):
-        """Bargasht dadan tedad kart haye baghi mande"""
+        """مقدار باقی مانده کارتها"""
         return len(self.list_kart)
 
     def namayesh(self):
