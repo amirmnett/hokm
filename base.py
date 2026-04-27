@@ -57,7 +57,7 @@ class dast:
         }
 
         # ساخت52 کارت
-            for khal in list_khal:
+        for khal in list_khal:
             for ragham, emtiaz in ragham_emtiaz.items():
                 self.list_kart.append(Card(khal, ragham, emtiaz))
     
@@ -66,33 +66,4 @@ class dast:
         self.list_kart.append(Card(None, "Joker-Red", None))
         self.list_kart.append(Card(None, "Joker-Black", None))
 
-    def bor(self):
-        """بور زدن رندوم میز"""
-        import random
-        random.shuffle(self.list_kart)
-
-    def bardasht_kart(self):
-        """برداشتن بالا ترین کارت از دست """
-        if len(self.list_kart) == 0:
-            return None
-        return self.list_kart.pop()
-
-    def tedad_kart(self):
-        """مقدار باقی مانده کارتها"""
-        return len(self.list_kart)
-
-    def namayesh(self):
-        """Namayesh deck"""
-        return self.list_kart
-
-
-# ================================================
-#  Example Usage
-# ================================================
-
-deck = dast()
-deck.bar_zadan()
-
-print("Tedad kart:", dast.tedad_kart())
-print("Kart bardashte shode:", dast.bardasht_kart())
-print("Baghimande:", dast.tedad_kart())
+   
